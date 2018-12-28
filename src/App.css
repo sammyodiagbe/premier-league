@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+section,
+header,
+div,
+aside,
+article,
+footer {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 200;
+}
+
+.nav {
+  height: 50px;
+  background: rgb(80, 89, 218);
+  color: #fff;
+  padding: 0.7em;
+  position: relative;
+}
+
+.nav::after,
+.nav::before {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.nav-brand {
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  float: left;
+}
+
+.animate-logo {
+  animation-name: spin;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 500px 500px 1fr;
+}
+
+.games {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(10, 50px);
+  grid-template-columns: 1fr;
+}
+
+.games .indmatch {
+  padding: 1.3em 0.6em;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  grid-template-rows: 1fr;
+}
+
+.match,
+.table,
+.form {
+  overflow: hidden;
+}
+
+h5 {
+  padding: 0.8em;
+  background: #555;
+  color: #fdfdfd;
+}
+
+.teamLogo {
+  height: 35px;
+  width: 35px;
+  display: inline-block;
+}
+
+.seasonAndWeek {
+  float: right;
+  font-weight: 250;
+  font-size: 1em;
+}
+
+.simulateGame {
+  padding: 0.5em 0.8em;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  color: rgb(22, 16, 16);
+  border-radius: 4px;
+  float: right;
+  margin-right: 0.8em;
+  cursor: pointer;
+}
+
+.gameTimer {
+  font-weight: bold;
+  font-size: 1.1em;
+  transform: scale(1.5);
+  float: right;
+}
+
+.animateTimer {
+  animation-name: scale;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1.5);
+  }
+
+  50% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+.tableData {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.tableline .teamLogo,
+.teamformline .teamLogo {
+  height: 15px;
+  width: 15px;
+}
+
+.tableline {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.2em 0.6em;
+  font-weight: 350;
+  font-size: 0.9em;
+}
+.tableline:nth-child(odd) {
+  background: #b8c4d3;
+  color: rgb(0, 0, 0);
+}
+.teamtabledata {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(8, 1fr);
+  text-align: center;
+  padding: 0.1em 0.3em;
+}
+
+.tableheader {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0.2em 0.6em;
+  background: rgb(42, 102, 231);
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 350;
+}
+
+.tableheaderright {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.tableheaderright span {
+  text-align: center;
+  padding: 0.1em 0.3em;
+}
+
+span.alert {
+  background: #f0a;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation-name: flash;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-delay: 12.5s;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.teamformline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 0.2em 0.3em;
+}
+
+.teamformlineright {
+  text-align: center;
+}
